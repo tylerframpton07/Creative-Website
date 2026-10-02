@@ -1,50 +1,57 @@
-import { motion } from 'framer-motion'
+const navLinks = [
+  { label: 'The Villa', href: '#villa' },
+  { label: 'Amenities', href: '#amenities' },
+  { label: 'Journal', href: '#journal' },
+  { label: 'Contact', href: '#contact' },
+]
 
-const navLinks = ["Product", "Pricing", "Docs", "Contact"]
+function Mark() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 20 12 4l9 16" stroke="#f4f2ec" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M8 20v-6.5l4-2.2 4 2.2V20" stroke="#f4f2ec" strokeWidth="1.6" strokeLinejoin="round" />
+    </svg>
+  )
+}
 
 export default function Navbar() {
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }}
-      style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '26px 44px' }}
-    >
-      <div style={{ display: 'flex', alignItems: 'center', gap: '44px' }}>
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C1.4 11 1 11.9 1 13v3c0 .6.4 1 1 1h2" />
-          <circle cx="7" cy="17" r="2" />
-          <path d="M9 17h6" />
-          <circle cx="17" cy="17" r="2" />
-        </svg>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <div className="absolute inset-0 h-24 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
+      <nav
+        className="animate-fade-down relative flex items-center justify-between px-6 md:px-10 py-6"
+        style={{ animationDelay: '0.15s' }}
+      >
+        <a href="#home" className="flex items-center gap-2.5 shrink-0">
+          <Mark />
+          <span
+            className="text-white text-[16.5px] tracking-[-0.01em]"
+            style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}
+          >
+            Tourist House
+          </span>
+        </a>
+
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              style={{ fontSize: '14px', fontWeight: 500, fontFamily: "'Inter', sans-serif", color: 'rgba(255,255,255,0.82)', textDecoration: 'none' }}
+              key={link.href}
+              href={link.href}
+              className="text-[11.5px] font-medium uppercase tracking-[0.14em] text-white/70 hover:text-white transition-colors duration-200 whitespace-nowrap"
             >
-              {link}
+              {link.label}
             </a>
           ))}
         </div>
-      </div>
-      <motion.a
-        href="#contact"
-        whileHover={{ scale: 1.04 }}
-        whileTap={{ scale: 0.97 }}
-        style={{
-          padding: '11px 24px',
-          borderRadius: '999px',
-          fontSize: '14px',
-          fontWeight: 600,
-          fontFamily: "'Inter', sans-serif",
-          color: '#111',
-          textDecoration: 'none',
-          background: '#fff',
-          boxShadow: '0 4px 18px rgba(0,0,0,0.25)',
-        }}
-      >
-        Contact Us
-      </motion.a>
-    </motion.nav>
+
+        <a
+          href="#contact"
+          className="inline-flex items-center px-5 py-2.5 rounded-full text-[13px] font-medium text-[#0a0a08] transition-all duration-200 hover:brightness-105"
+          style={{ background: '#e7d9b8' }}
+        >
+          Reserve Your Stay
+        </a>
+      </nav>
+    </header>
   )
 }
