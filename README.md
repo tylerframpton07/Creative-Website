@@ -18,4 +18,4 @@ npm run build
 
 ## GitHub Pages
 
-This repository is configured for the project site at [https://academiccat16.github.io/complex-website/](https://academiccat16.github.io/complex-website/). The Vite base path is `/complex-website/`; the GitHub Actions workflow in `.github/workflows/deploy.yml` builds and deploys `dist` on pushes to `main`.
+This repository is configured for the project site at [https://tylerframpton07.github.io/Creative-Website/](https://tylerframpton07.github.io/Creative-Website/). The Vite base path is `/Creative-Website/`; the GitHub Actions workflow in `.github/workflows/deploy.yml` builds and deploys `dist` on pushes to `main`.
