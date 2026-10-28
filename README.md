@@ -1,6 +1,10 @@
-# Tourist House
+# Quick-Fold Laundry Sorting Mat
 
-A scroll-driven landing page for a private villa in St. Lucia, built with React, TypeScript, Vite, and Tailwind CSS.
+**Live website:** [tylerframpton07.github.io/Creative-Website](https://tylerframpton07.github.io/Creative-Website/)
+
+A product-concept landing page for Quick-Fold, a portable laundry sorting mat designed to make folding more manageable in dorms, small apartments, shared laundry rooms, and busy households.
+
+The page presents the product's core differentiators from the venture strategy: flexible folding panels, magnetic latches, an anti-slip surface, and a portable format. Its interactive demo walks through placing a garment, folding the sides, and latching the finished stack.
 
 ## Local development
 
@@ -9,7 +13,7 @@ npm ci
 npm run dev
 ```
 
-## Build
+## Validation
 
 ```sh
 npm run lint
@@ -18,4 +22,4 @@ npm run build
 
 ## GitHub Pages
 
-This repository is configured for the project site at [https://tylerframpton07.github.io/Creative-Website/](https://tylerframpton07.github.io/Creative-Website/). The Vite base path is `/Creative-Website/`; the GitHub Actions workflow in `.github/workflows/deploy.yml` builds and deploys `dist` on pushes to `main`.
+The site deploys from `main` to [the live Creative Website](https://tylerframpton07.github.io/Creative-Website/). Vite uses the `/Creative-Website/` base path, and the GitHub Actions workflow in `.github/workflows/deploy.yml` builds and deploys `dist` on pushes to `main`.
